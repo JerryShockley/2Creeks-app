@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-# gem "pg", "~> 1.4"
+gem "pg", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -26,6 +26,15 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+gem "pundit", "~>2.3"
+gem "pundit-matchers", "~>1.8"
+
+gem "devise", "~>4.8"
+gem "devise_invitable", "~>2.0"
+
+gem "kaminari", "~>1.2"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -60,7 +69,11 @@ group :development do
   gem "capistrano", require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'capistrano-passenger',   require: false
+  gem 'capistrano-sidekiq', require: false
+
+
+  gem "pry-byebug", require: false
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -72,6 +85,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
+  gem "rspec", require: false
   gem "selenium-webdriver"
   gem "webdrivers"
 end
