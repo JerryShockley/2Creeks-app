@@ -27,6 +27,7 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+
 gem "pundit", "~>2.3"
 gem "pundit-matchers", "~>1.8"
 
@@ -66,11 +67,9 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  gem "capistrano", require: false
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-passenger',   require: false
-  gem 'capistrano-sidekiq', require: false
+  gem "capistrano", "~> 3.10", require: false
+  gem 'capistrano-rails', "~> 1.6",  require: false
+  gem 'capistrano-postgresql', "~> 6.2", require: false
 
 
   gem "pry-byebug", require: false
